@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "Quick Archive",
+  "version": "3.0",
+  "permissions": [
+    "contextMenus",
+    "storage", 
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://archive.ph/*",
+    "*://archive.today/*",
+    "*://archive.is/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon.png",
+      "48": "icons/icon.png",
+      "128": "icons/icon.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://archive.ph/*", "*://archive.today/*", "*://archive.is/*"],
+      "js": ["cleaner.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon.png",
+    "48": "icons/icon.png",
+    "128": "icons/icon.png"
+  }
+}

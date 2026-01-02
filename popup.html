@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      width: 280px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      padding: 15px;
+      margin: 0;
+      color: #333;
+    }
+
+    .hero-btn {
+      width: 100%;
+      padding: 12px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-bottom: 20px;
+      transition: background 0.2s;
+    }
+    .hero-btn:hover { background-color: #0056b3; }
+
+    .section-title {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #888;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .option-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    input[type="checkbox"], input[type="radio"] {
+      margin-right: 10px;
+      transform: scale(1.2);
+    }
+
+    /* Success Message */
+    #status {
+      font-size: 12px;
+      color: green;
+      text-align: center;
+      height: 15px;
+      margin-top: 10px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="archiveNow" class="hero-btn">Archive Current Tab</button>
+
+  <div class="section-title">Settings</div>
+
+  <label class="option-row">
+    <input type="checkbox" id="autoClean">
+    <span>Auto-Clean (Reader Mode)</span>
+  </label>
+
+  <div class="section-title" style="margin-top: 15px;">Open Behavior</div>
+  
+  <label class="option-row">
+    <input type="radio" name="openMode" value="newTab">
+    <span>New Tab</span>
+  </label>
+  
+  <label class="option-row">
+    <input type="radio" name="openMode" value="sameTab">
+    <span>Same Tab</span>
+  </label>
+
+  <div id="status">Saved!</div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
